@@ -2,7 +2,7 @@
 
 Groceezy is an advanced and user-friendly online grocery shopping platform designed using the MERN stack (MongoDB, Express.js, React.js, Node.js). With Groceezy, users can easily browse, shop, and purchase their grocery needs online in a simple and efficient manner. The app ensures smooth performance, a modern design, and an engaging user experience, making it your go-to platform for all grocery shopping requirements.
 
-==================================================================================
+===========================================================================
 
 🚀 Features
 
@@ -20,7 +20,7 @@ Groceezy is an advanced and user-friendly online grocery shopping platform desig
 
 🔄 Real-Time Data Sync – Groceezy provides real-time product data updates, ensuring that your product catalog is always fresh and accurate.
 
-==================================================================================
+==========================================================================
 
 🛠️ Tech Stack
 
@@ -44,7 +44,7 @@ MongoDB – A NoSQL database that stores product listings, user data, and orders
 
 JWT (JSON Web Tokens) – Ensures secure authentication for user login and session management.
 
-==================================================================================
+===========================================================================
 
 🔧 Installed Dependencies
 
@@ -62,7 +62,7 @@ JWT (JSON Web Tokens) – Ensures secure authentication for user login and sessi
 
 • JWT → npm install jsonwebtoken (For handling secure user authentication)
 
-==================================================================================
+===========================================================================
 
 ▶️ How to Run the Groceezy Project
 

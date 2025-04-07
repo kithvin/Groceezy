@@ -25,7 +25,7 @@ function Navbar() {
 
       <NavLink to="/" onClick={()=> setOpen(false)}>
         <img
-          className="h-10" // Ensure the height remains auto to maintain aspect ratio
+          className="h-10.5" // Ensure the height remains auto to maintain aspect ratio
           style={{ width: "140px" }} // Set custom width
           src={assets.logo}
           alt="dummyLogoColored"
@@ -69,7 +69,7 @@ function Navbar() {
         {/* Login / User Profile Section */}
 
         {!user ? ( // Login button if user is not logged in
-          <button onClick={()=> setshowUserLogin(true)} className="cursor-pointer px-8 py-2  bg-primary hover:bg-primary-dull transition text-white rounded-full ml-7">
+          <button onClick={()=> setshowUserLogin(true)} className="cursor-pointer px-8 py-2  bg-primary hover:bg-primary-dull transition text-white rounded-full ml-3">
           Login
         </button>)
         :( // User profile dropdown if user is logged in
