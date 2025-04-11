@@ -25,7 +25,7 @@ function Navbar() {
 
       <NavLink to="/" onClick={()=> setOpen(false)}>
         <img
-          className="h-10.5" // Ensure the height remains auto to maintain aspect ratio
+          className="h-11" // Ensure the height remains auto to maintain aspect ratio
           style={{ width: "140px" }} // Set custom width
           src={assets.logo}
           alt="dummyLogoColored"
@@ -100,7 +100,7 @@ function Navbar() {
         <div
         className={`${
           open ? "flex" : "hidden"
-        } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}
+        } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden z-50`}
       >
         <NavLink to="/" onClick={() => setOpen(false)}>
           Home

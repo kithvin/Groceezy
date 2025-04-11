@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* Importing the Inter font family from Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
+/* Importing the Tailwind CSS */
 
 @import "tailwindcss";
 
-*{
-    font-family: "Outfit", sans-serif;
+/*  Apply the Outfit font to all elements globally */
+* {
+  font-family: "Inter", sans-serif;
 }
 
-@theme{
-    --color-primary:#4fbf8b;
-    --color-primary-dull:#44ae7c;
+/*  Add Custom theme color to the project */
+
+@theme {
+  --color-primary: #4fbf8b;
+  --color-primary-dull: #44ae7c;
 }
