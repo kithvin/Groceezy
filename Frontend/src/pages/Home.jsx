@@ -1,8 +1,9 @@
 import React from "react";
 
-import MainBanner from "../components/MainBanner"; // MainBanner component
-import Categories from "../components/Categories"; // Categories component
-import BestSeller from "../components/BestSeller"; // Categories BestSeller
+import MainBanner from "../components/MainBanner"; // MainBanner Component
+import Categories from "../components/Categories"; // Categories Component
+import BestSeller from "../components/BestSeller"; // BestSeller Component
+import BottomBanner from "../components/BottomBanner"; // BottomBanner Component
 
 function Home() {
   return (
@@ -16,6 +17,9 @@ function Home() {
 
       {/* BestSeller section */}
       <BestSeller/>
+
+     {/* BottomBanner section */}
+      <BottomBanner/>
     </div>
   );
 }
