@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"; // Navbar component
 import { Route, Routes, useLocation } from "react-router-dom"; // Routing tools
 import Home from "./pages/Home"; // Home page
 import { Toaster } from "react-hot-toast"; // Import Toaster for showing notifications
+import Footer from "./components/Footer"; // Footer component
 
 function App() {
   // Check if the current path includes "seller"
@@ -25,6 +26,9 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
+
+      {/* Render Footer only if the route is not a seller route */}
+      {!isSellerPath && <Footer />}
     </div>
   );
 }

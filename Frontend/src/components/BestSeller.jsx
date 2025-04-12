@@ -17,7 +17,7 @@ function BestSeller() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
         {products
           .filter((product) => product.inStock) // Only in-stock products
-          .slice(0, 5)
+          .slice(0, 10)
           .map((product, index) => (
             <div key={index} className="flex justify-center">
               <ProductCard product={product} /> {/* Show product card */}
