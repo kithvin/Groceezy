@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast"; // Import Toaster for showing notific
 import Footer from "./components/Footer"; // Footer component
 import { useAppContext } from "./context/AppContext";
 import Login from "./components/Login";
+import AllProducts from "./pages/AllProducts";
 
 function App() {
   // Check if the current path includes "seller"
@@ -29,8 +30,14 @@ function App() {
         className={`${isSellerPath ? "" : "px-6 md:px-16 lg:px-24 xl:px-32"} `}
       >
         <Routes>
+          
           {/* Home route */}
           <Route path="/" element={<Home />} />
+
+          {/* AllProducts route */}
+          <Route path="/products" element={<AllProducts />} />
+
+
         </Routes>
       </div>
 

@@ -25,22 +25,23 @@ export const AppContextProvider = ({ children }) => {
   // State to manage the products (you can later update this with actual product data)
   const [products, setProducts] = useState([]);
 
+  // State to manage cart items
   const [cartItems, setCartItems] = useState({});
+
+  // State to manage search query input
+  const [searchQuery, setSearchQuery] = useState({});
 
   // Fetch product data (dummy data)
   const fetchProducts = async () => {
-    setProducts(dummyProducts); // Set products
+    setProducts(dummyProducts); // Set products to dummy data
   };
 
   /* Function to add product to the cart */
-
   const addToCart = (itemId) => {
     // Clone the current cart items to avoid directly mutating state
-
     let cartData = structuredClone(cartItems);
 
     // Check if the item is already in the cart
-
     if (cartData[itemId]) {
       cartData[itemId] += 1; // If yes, increase the quantity
     } else {
@@ -49,10 +50,10 @@ export const AppContextProvider = ({ children }) => {
 
     // Update the cart state with the new cart data
     setCartItems(cartData);
-    toast.success("Added to Cart");
+    toast.success("Added to Cart"); // Show success toast notification
   };
 
-  /*  update cart item quantity  */
+  /* Update cart item quantity */
   const updateCartItem = (itemId, quantity) => {
     let cartData = structuredClone(cartItems); // Clone the current cart items to avoid directly mutating state
     cartData[itemId] = quantity; // Update the quantity of the specified item
@@ -60,23 +61,23 @@ export const AppContextProvider = ({ children }) => {
     toast.success("Cart Updated"); // Show success toast notification
   };
 
-  /* Romove Product form Cart */
-
-    const removeFromCart = (itemId)=>{
-      let cartData = structuredClone(cartItems); // Clone the cart data
-      if(cartData[itemId]){ // Check if the item exists in the cart
-        cartData[itemId] -= 1; // Decrease the quantity of the ite
-        if(cartData[itemId] === 0){
-          delete cartData[itemId]; // Remove item from cart if quantity is 0
-        }
+  /* Remove Product from Cart */
+  const removeFromCart = (itemId) => {
+    let cartData = structuredClone(cartItems); // Clone the cart data
+    if (cartData[itemId]) {
+      // Check if the item exists in the cart
+      cartData[itemId] -= 1; // Decrease the quantity of the item
+      if (cartData[itemId] === 0) {
+        delete cartData[itemId]; // Remove item from cart if quantity is 0
       }
-
-      // Show success toast notification
-      toast.success("Remove from Cart");
-
-      // Update the cart state with the new data
-      setCartItems(cartData);
     }
+
+    // Show success toast notification
+    toast.success("Removed from Cart");
+
+    // Update the cart state with the new data
+    setCartItems(cartData);
+  };
 
   // Fetch products when the component mounts
   useEffect(() => {
@@ -98,7 +99,9 @@ export const AppContextProvider = ({ children }) => {
     cartItems, // Stores items in the cart
     addToCart, // Function to add an item to the cart
     updateCartItem, // Function to update the quantity of an item in the cart
-    removeFromCart // Function to remove an item from the cart
+    removeFromCart, // Function to remove an item from the cart
+    searchQuery, // Stores the search query
+    setSearchQuery, // Function to set the search query
   };
 
   // Providing the context to children components

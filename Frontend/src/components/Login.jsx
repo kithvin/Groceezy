@@ -1,32 +1,49 @@
 import React from "react";
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../context/AppContext"; // import global context
 
 function Login() {
+  // Access global context functions for setting user and toggling modal visibility
+  const { setshowUserLogin, setUser } = useAppContext();
 
-  const {setshowUserLogin, setUser} = useAppContext();
-
+  // Local component states
   const [state, setState] = React.useState("login");
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const onSubmitHandler = async (event)=>{
+  // Handle form submission (login or register)
+  const onSubmitHandler = async (event) => {
     event.preventDefault();
+
+    // Dummy user setup
     setUser({
       email: "test@gmail.com",
-      name: "TestUser"
-    })
+      name: "TestUser",
+    });
+
+    // Close the login modal after submission
     setshowUserLogin(false);
-  }
+  };
 
   return (
-    <div onClick={()=> setshowUserLogin(false)} className="fixed top-0 bottom-0 left-0 right-0 z-30 flex items-center text-sm text-gray-600 bg-black/50">
-      
-      <form onSubmit={onSubmitHandler} onClick={(e)=>e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-white">
+    // Overlay background to darken page and allow modal dismissal on click
+    <div
+      onClick={() => setshowUserLogin(false)}
+      className="fixed top-0 bottom-0 left-0 right-0 z-30 flex items-center text-sm text-gray-600 bg-black/50"
+    >
+      {/* Login/Register form container - stop click propagation to avoid closing modal */}
+      <form
+        onSubmit={onSubmitHandler}
+        onClick={(e) => e.stopPropagation()}
+        className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-white"
+      >
+        {/* Form header */}
         <p className="text-2xl font-medium m-auto">
           <span className="text-primary">User</span>{" "}
           {state === "login" ? "Login" : "Sign Up"}
         </p>
+
+        {/* Name input */}
         {state === "register" && (
           <div className="w-full">
             <p>Name</p>
@@ -40,6 +57,8 @@ function Login() {
             />
           </div>
         )}
+
+        {/* Email input */}
         <div className="w-full ">
           <p>Email</p>
           <input
@@ -51,6 +70,8 @@ function Login() {
             required
           />
         </div>
+
+        {/* Password input */}
         <div className="w-full ">
           <p>Password</p>
           <input
@@ -62,6 +83,8 @@ function Login() {
             required
           />
         </div>
+
+        {/* Toggle between login and register modes */}
         {state === "register" ? (
           <p>
             Already have account?{" "}
@@ -83,6 +106,8 @@ function Login() {
             </span>
           </p>
         )}
+
+        {/* Submit button */}
         <button className="bg-primary hover:bg-primary-dull transition-all text-white w-full py-2 rounded-md cursor-pointer">
           {state === "register" ? "Create Account" : "Login"}
         </button>
