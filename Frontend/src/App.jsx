@@ -4,9 +4,10 @@ import { Route, Routes, useLocation } from "react-router-dom"; // Routing tools
 import Home from "./pages/Home"; // Home page
 import { Toaster } from "react-hot-toast"; // Import Toaster for showing notifications
 import Footer from "./components/Footer"; // Footer component
-import { useAppContext } from "./context/AppContext";
-import Login from "./components/Login";
-import AllProducts from "./pages/AllProducts";
+import { useAppContext } from "./context/AppContext"; // AppContext component
+import Login from "./components/Login"; // Login component
+import AllProducts from "./pages/AllProducts"; // All Products component
+import ProductCategory from "./pages/ProductCategory"; // Product Category component
 
 function App() {
   // Check if the current path includes "seller"
@@ -34,10 +35,11 @@ function App() {
           {/* Home route */}
           <Route path="/" element={<Home />} />
 
-          {/* AllProducts route */}
+          {/* All Products route */}
           <Route path="/products" element={<AllProducts />} />
 
-
+          {/* Product Category route */}
+          <Route path="/products/:category" element={<ProductCategory />} />
         </Routes>
       </div>
 
