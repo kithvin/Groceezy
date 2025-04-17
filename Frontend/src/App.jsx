@@ -4,15 +4,22 @@ import { Route, Routes, useLocation } from "react-router-dom"; // Routing tools
 import Home from "./pages/Home"; // Home page
 import { Toaster } from "react-hot-toast"; // Import Toaster for showing notifications
 import Footer from "./components/Footer"; // Footer component
+import { useAppContext } from "./context/AppContext";
+import Login from "./components/Login";
 
 function App() {
   // Check if the current path includes "seller"
   const isSellerPath = useLocation().pathname.includes("seller");
 
+  // Access context value to determine whether to show the user login modal
+  const {showUserLogin} =useAppContext();
   return (
     <div>
       {/* Only show Navbar if not on seller path */}
       {isSellerPath ? null : <Navbar />}
+
+      {/* Conditionally render the login modal if showUserLogin is true */}
+      {showUserLogin ? <Login/> : null}
 
       {/* Display toast notifications */}
       <Toaster />
