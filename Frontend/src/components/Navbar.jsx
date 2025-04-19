@@ -15,6 +15,7 @@ function Navbar() {
     navigate,
     setSearchQuery,
     searchQuery,
+    getCartCount,
   } = useAppContext();
 
   // Function to handle logout: Clears user info from the state
@@ -71,7 +72,7 @@ function Navbar() {
             className="w-6 opacity-80"
           />
           <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full">
-            3
+            {getCartCount()}
           </button>
         </div>
         {/* Login / User Profile Section */}
@@ -105,16 +106,32 @@ function Navbar() {
         )}
       </div>
 
-      {/* Mobile Menu Button (Hamburger Icon) */}
+      <div className="flex items-center gap-6 sm:hidden">
+        <div
+          onClick={() => navigate("/cart")}
+          className="relative cursor-pointer"
+        >
+          <img
+            src={assets.nav_cart_icon}
+            alt="cart"
+            className="w-6 opacity-80"
+          />
+          <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full">
+            {getCartCount()}
+          </button>
+        </div>
 
-      <button
-        onClick={() => (open ? setOpen(false) : setOpen(true))} // Toggle the open state for the mobile menu
-        aria-label="Menu"
-        className="sm:hidden"
-      >
-        {/* Menu Icon SVG */}
-        <img src={assets.menu_icon} alt="menu" />
-      </button>
+        {/* Mobile Menu Button (Hamburger Icon) */}
+
+        <button
+          onClick={() => (open ? setOpen(false) : setOpen(true))} // Toggle the open state for the mobile menu
+          aria-label="Menu"
+          className=""
+        >
+          {/* Menu Icon SVG */}
+          <img src={assets.menu_icon} alt="menu" />
+        </button>
+      </div>
 
       {/* Mobile Menu: Displays when 'open' is true */}
 

@@ -79,6 +79,31 @@ export const AppContextProvider = ({ children }) => {
     setCartItems(cartData);
   };
 
+  /* Function to get total number of items in the cart */
+
+  const getCartCount = () => {
+    let totalCount = 0;
+    // Loop through all cart items and add up their quantities
+    for (const item in cartItems) {
+      totalCount += cartItems[item];
+    }
+    // Return the total count of items in the cart
+    return totalCount;
+  };
+
+  /* Get Cart Total Amount */
+
+  const getCartAmount = () =>{
+    let totalAmount = 0;
+    for (const items in cartItems){
+      let itemInfo = products.find((product)=> product._id === items); // Find product info by ID
+      if(cartItems[items] > 0){
+        totalAmount += itemInfo.offerPrice * cartItems[items]; // Calculate total price
+      }
+    }
+    return Math.floor(totalAmount * 100) / 100; // Round to two decimal places
+  }
+
   // Fetch products when the component mounts
   useEffect(() => {
     fetchProducts(); // Call the function to fetch products
@@ -102,6 +127,8 @@ export const AppContextProvider = ({ children }) => {
     removeFromCart, // Function to remove an item from the cart
     searchQuery, // Stores the search query
     setSearchQuery, // Function to set the search query
+    getCartAmount, // Function to get total cart amount
+    getCartCount // Function to get total item count in cart
   };
 
   // Providing the context to children components

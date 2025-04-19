@@ -8,6 +8,7 @@ import { useAppContext } from "./context/AppContext"; // AppContext component
 import Login from "./components/Login"; // Login component
 import AllProducts from "./pages/AllProducts"; // All Products component
 import ProductCategory from "./pages/ProductCategory"; // Product Category component
+import ProductDetails from "./pages/ProductDetails"; // Product Details component
 
 function App() {
   // Check if the current path includes "seller"
@@ -40,6 +41,10 @@ function App() {
 
           {/* Product Category route */}
           <Route path="/products/:category" element={<ProductCategory />} />
+
+          {/* Product Details route */}
+          <Route path="/products/:category/:id" element={<ProductDetails />} />
+
         </Routes>
       </div>
 
