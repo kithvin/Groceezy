@@ -9,6 +9,7 @@ import Login from "./components/Login"; // Login component
 import AllProducts from "./pages/AllProducts"; // All Products component
 import ProductCategory from "./pages/ProductCategory"; // Product Category component
 import ProductDetails from "./pages/ProductDetails"; // Product Details component
+import Cart from "./pages/Cart"; // Cart component
 
 function App() {
   // Check if the current path includes "seller"
@@ -44,6 +45,9 @@ function App() {
 
           {/* Product Details route */}
           <Route path="/products/:category/:id" element={<ProductDetails />} />
+
+          {/* Cart route */}
+          <Route path="/Cart" element={<Cart />} />
 
         </Routes>
       </div>
