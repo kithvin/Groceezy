@@ -1,1 +1,20 @@
+/* Import Google Font: Outfit */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/*  Import Tailwind CSS */
+
 @import "tailwindcss";
+
+/* Apply Outfit font to all elements */
+
+* {
+    font-family: "Outfit", sans-serif;
+}
+
+/* Custom primary color and Duller version of primary */
+
+@theme{
+    --color-primary : #4fbf8b; /* Custom primary color */
+    --color-primary-dull : #44ae7c;
+}
