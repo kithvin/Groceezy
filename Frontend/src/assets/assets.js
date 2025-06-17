@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import search_icon from "./search_icon.svg";
 import remove_icon from "./remove_icon.svg";
 import arrow_right_icon_colored from "./arrow_right_icon_colored.svg";
@@ -70,6 +70,11 @@ import quinoa_image from "./quinoa_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import barley_image from "./barley_image.png";
 
+import location_icon from "./location_icon.png";
+import phone_icon from "./phone_icon.png";
+import email_icon from "./email_icon.png";
+import clock_icon from "./clock_icon.png";
+
 export const assets = {
   logo,
   search_icon,
@@ -98,6 +103,11 @@ export const assets = {
   bottom_banner_image_sm,
   add_address_iamge,
   box_icon,
+
+  location_icon,
+  phone_icon,
+  email_icon,
+  clock_icon
 };
 
 export const categories = [

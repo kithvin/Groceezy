@@ -10,9 +10,10 @@ export const AppContextProvider = ({ children }) => {
   const navigate = useNavigate(); // For page navigation
   const [user, setUser] = useState(null); // To store user info
   const [isSeller, setIsUser] = useState(false); // To check if user is a seller
+  const [showUserLogin, setShowUserLogin] = useState(false);// Show login modal
 
   // Values that will be shared in the app
-  const value = { navigate, user, setUser, isSeller, setIsUser };
+  const value = { navigate, user, setUser, isSeller, setIsUser,showUserLogin, setShowUserLogin };
 
   // Wrap and return children with the context provider
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
