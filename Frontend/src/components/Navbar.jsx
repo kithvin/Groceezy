@@ -1,69 +1,61 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
-  const [open, setOpen] = React.useState(false);
-  const navigate = useNavigate();
-  const { user, setUser, setShowUserLogin } = useAppContext();
+  const [open, setOpen] = React.useState(false); // State for mobile menu toggle
+  const { user, setUser, setShowUserLogin, navigate } = useAppContext(); // Get context values
 
+  // Logout function
   const logout = async () => {
     setUser(null);
     navigate("/");
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
-   
+    <nav
+      className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 
+    border-b border-gray-300 bg-white relative transition-all"
+    >
+      {/* Logo */}
+
       <NavLink to="/" onClick={() => setOpen(false)}>
         <img className="h-10" src={assets.logo} alt="logo" />
       </NavLink>
 
-    
+      {/* Desktop Menu */}
+
       <div className="hidden sm:flex items-center gap-8">
-        <NavLink
-          to="/"
-          className={({ isActive }) => 
-            `px-4 py-1.5 rounded-full transition-colors font-semibold ${
-              isActive ? 'text-primary' : 'hover:text-primary-dull'
-            }`
-          }
-        >
+        <NavLink to="/" className="font-semibold hover:text-primary-dull mr-4">
           Home
         </NavLink>
         <NavLink
-          to="/products"
-          className={({ isActive }) => 
-            `px-4 py-1.5 rounded-full transition-colors font-semibold ${
-              isActive ? 'text-primary' : 'hover:text-primary-dull'
-            }`
-          }
+          to="/product"
+          className="font-semibold hover:text-primary-dull mr-4"
         >
-          All Products
+          All Product
         </NavLink>
         <NavLink
           to="/contact"
-          className={({ isActive }) => 
-            `px-4 py-1.5 rounded-full transition-colors font-semibold ${
-              isActive ? 'text-primary' : 'hover:text-primary-dull'
-            }`
-          }
+          className="font-semibold hover:text-primary-dull mr-4"
         >
           Contact
         </NavLink>
 
-       
-        <div className="hidden lg:flex items-center text-sm gap-1 border border-gray-300 px-3 rounded-full">
+        {/* Search Bar */}
+
+        <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
           <input
-            className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500 text-center"
+            className="py-1.5 w-36 bg-transparent outline-none placeholder-gray-500 text-center"
             type="text"
             placeholder="Search products"
           />
-          <img src={assets.search_icon} alt="search" className="w-4 h-4" />
+          <img src={assets.search_icon} alt="search" className="w-4 h-4 mr-1" />
         </div>
 
-      
+        {/* Cart Icon with badge */}
+
         <div
           onClick={() => navigate("/cart")}
           className="relative cursor-pointer"
@@ -73,32 +65,45 @@ const Navbar = () => {
             alt="cart"
             className="w-6 opacity-80"
           />
-          <span className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full flex items-center justify-center">
+          <button
+            className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] 
+          h-[18px] rounded-full"
+          >
             3
-          </span>
+          </button>
         </div>
 
+        {/* Login or Profile Dropdown */}
 
         {!user ? (
           <button
             onClick={() => setShowUserLogin(true)}
-            className="cursor-pointer px-8 py-2 ml-4 bg-primary hover:bg-primary-dull transition text-white rounded-full"
+            className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition 
+            text-white rounded-full ml-4"
           >
             Login
           </button>
         ) : (
           <div className="relative group ml-4">
+            {/* Profile Icon */}
+
             <img
               src={assets.profile_icon}
               alt="Profile"
               className="w-10 cursor-pointer"
             />
-            <ul className="hidden group-hover:block absolute top-10 right-0 bg-white shadow border border-gray-200 py-2.5 w-30 rounded-md text-sm z-40">
+
+            {/* Dropdown Menu */}
+
+            <ul
+              className="hidden group-hover:block absolute top-10 right-0 bg-white shadow 
+            border border-gray-200 py-2.5 w-30 rounded-md text-sm z-40"
+            >
               <li
-                onClick={() => navigate("/my-orders")}
+                onClick={() => navigate("my-order")}
                 className="p-1.5 pl-3 hover:bg-primary/10 cursor-pointer"
               >
-                My Orders
+                My Order
               </li>
               <li
                 onClick={logout}
@@ -111,93 +116,83 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile menu button */}
-      
+      {/* Mobile Menu Button */}
+
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => (open ? setOpen(false) : setOpen(true))}
         aria-label="Menu"
-        className="sm:hidden focus:outline-none"
+        className="sm:hidden"
       >
-        <img 
-          src={assets.menu_icon} 
-          alt="menu" 
-          className="w-6 h-6"
+        {/* Menu Icon SVG */}
+        <img
+          src={assets.menu_icon}
+          alt="menu"
+          className="w-6 h-6 cursor-pointer"
         />
       </button>
 
-      {/* Enhanced Mobile Menu */}
+      {/* Mobile Menu */}
+
       {open && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-lg py-4 flex flex-col items-start px-6 space-y-3 text-sm md:hidden z-50 animate-fadeIn">
-          <NavLink 
-            to="/" 
+        <div
+          className={`${
+            open ? "flex" : "hidden"
+          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start 
+          gap-2 px-5 text-sm md:hidden z-50`}
+        >
+          <NavLink
+            className="w-full py-2 px-3 rounded transition-colors font-semibold hover:text-primary-dull"
+            to="/"
             onClick={() => setOpen(false)}
-            className={({ isActive }) => 
-              `w-full py-2 px-3 rounded transition-colors ${
-                isActive ? 'text-primary font-medium' : 'hover:bg-gray-50'
-              }`
-            }
           >
             Home
           </NavLink>
-          
-          <NavLink 
-            to="/products" 
+          <NavLink
+            className="w-full py-2 px-3 rounded transition-colors font-semibold hover:text-primary-dull"
+            to="/product"
             onClick={() => setOpen(false)}
-            className={({ isActive }) => 
-              `w-full py-2 px-3 rounded transition-colors ${
-                isActive ? 'text-primary font-medium' : 'hover:bg-gray-50'
-              }`
-            }
           >
             All Products
           </NavLink>
-          
           {user && (
-            <NavLink 
-              to="/my-orders" 
+            <NavLink
+              className="w-full py-2 px-3 rounded transition-colors font-semibold hover:text-primary-dull"
+              to="/product"
               onClick={() => setOpen(false)}
-              className={({ isActive }) => 
-                `w-full py-2 px-3 rounded transition-colors ${
-                  isActive ? 'text-primary font-medium' : 'hover:bg-gray-50'
-                }`
-              }
             >
               My Orders
             </NavLink>
           )}
-          
-          <NavLink 
-            to="/contact" 
+          <NavLink
+            to="/contact"
+            className="w-full py-2 px-3 rounded transition-colors font-semibold hover:text-primary-dull"
             onClick={() => setOpen(false)}
-            className={({ isActive }) => 
-              `w-full py-2 px-3 rounded transition-colors ${
-                isActive ? 'text-primary font-medium' : 'hover:bg-gray-50'
-              }`
-            }
           >
             Contact
           </NavLink>
 
-          <div className="w-full mt-3 pt-2 border-t border-gray-100">
-            {!user ? (
-              <button
-                onClick={() => {
-                  setOpen(false);
-                  setShowUserLogin(true);
-                }}
-                className="w-full px-6 py-2.5 bg-primary hover:bg-primary-dull transition text-white rounded-full text-sm font-medium"
-              >
-                Login
-              </button>
-            ) : (
-              <button
-                onClick={logout}
-                className="w-full px-6 py-2.5 bg-primary hover:bg-primary-dull transition text-white rounded-full text-sm font-medium"
-              >
-                Logout
-              </button>
-            )}
-          </div>
+          {/* Login or Logout Button */}
+
+          {!user ? (
+            <button
+              onClick={() => {
+                setOpen(false);
+                setShowUserLogin(true);
+              }}
+              className="w-full px-6 py-2.5 bg-primary hover:bg-primary-dull transition 
+          text-white rounded-full text-sm font-medium"
+            >
+              Login
+            </button>
+          ) : (
+            <button
+              onClick={logout}
+              className="w-full px-6 py-2.5 bg-primary hover:bg-primary-dull transition 
+          text-white rounded-full text-sm font-medium"
+            >
+              Logout
+            </button>
+          )}
         </div>
       )}
     </nav>
@@ -205,3 +200,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
