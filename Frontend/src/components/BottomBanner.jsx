@@ -140,8 +140,8 @@ function BottomBanner() {
       />
 
       {/* Text and features on top of the image */}
-      <div className="absolute inset-0 flex flex-col items-center md:items-end justify-start md:justify-center pt-8 md:pt-0 px-4 md:px-0 md:pr-24">
-        <div className="bg-white/20 md:bg-transparent p-10 md:p-0 rounded-lg md:rounded-none">
+      <div className="absolute inset-0 flex flex-col items-center md:items-end justify-start md:justify-center pt-5 md:pt-0 px-4 md:px-0 md:pr-24">
+        <div className="bg-white/80 md:bg-transparent p-10 md:p-0 rounded-lg md:rounded-none">
           {/* Section title */}
           <h1 className="text-2xl md:text-4xl font-semibold text-primary mb-4 md:mb-8 text-center md:text-left">
             Why We Are Your Best Pick?
