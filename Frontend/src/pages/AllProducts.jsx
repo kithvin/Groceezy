@@ -35,7 +35,7 @@ function AllProducts() {
       </div>
 
        {/* Product grid: shows only products that are in stock */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-6 lg:grid-cols-5 mt-6">
+      <div className="grid sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-6 lg:grid-cols-5 mt-6 justify-center">
         {filteredProducts.filter((product)=> product.inStock).map((product,index)=>(
             <ProductCard key={index} product={product}/>
         ))}
