@@ -5,7 +5,7 @@ import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false); // State for mobile menu toggle
-  const { user, setUser, setShowUserLogin, navigate } = useAppContext(); // Get context values
+  const { user, setUser, setshowUserLogin, navigate } = useAppContext(); // Get context values
 
   // Logout function
   const logout = async () => {
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {!user ? (
           <button
-            onClick={() => setShowUserLogin(true)}
+            onClick={() => setshowUserLogin(true)}
             className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition 
             text-white rounded-full ml-4"
           >
@@ -177,7 +177,7 @@ const Navbar = () => {
             <button
               onClick={() => {
                 setOpen(false);
-                setShowUserLogin(true);
+                setshowUserLogin(true);
               }}
               className="w-full px-6 py-2.5 bg-primary hover:bg-primary-dull transition 
           text-white rounded-full text-sm font-medium"
