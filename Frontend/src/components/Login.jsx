@@ -17,8 +17,8 @@ function Login() {
 
     // Dummy user setup
     setUser({
-      email: "test@gmail.com",
-      name: "TestUser",
+      email: "admin@example.com",
+      name: "admin",
     });
 
     // Close the login modal after submission

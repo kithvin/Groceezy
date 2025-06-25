@@ -31,7 +31,7 @@ const Navbar = () => {
           Home
         </NavLink>
         <NavLink
-          to="/product"
+          to="/products"
           className="font-semibold hover:text-primary-dull mr-4"
         >
           All Product
@@ -149,7 +149,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className="w-full py-2 px-3 rounded transition-colors font-semibold hover:text-primary-dull"
-            to="/product"
+            to="/products"
             onClick={() => setOpen(false)}
           >
             All Products
@@ -157,7 +157,7 @@ const Navbar = () => {
           {user && (
             <NavLink
               className="w-full py-2 px-3 rounded transition-colors font-semibold hover:text-primary-dull"
-              to="/product"
+              to="/products"
               onClick={() => setOpen(false)}
             >
               My Orders
