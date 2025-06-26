@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import ProductCard from "../components/ProductCard";
 
-function AllProducts() {
+const AllProducts = () => {
 
   // Get all products and the current search query from global context
   const { products, searchQuery } = useAppContext();
@@ -27,10 +27,10 @@ function AllProducts() {
   }, [products, searchQuery]);
 
   return (
-    <div className="mt-16 flex flex-col">
+    <div className="mt-16 flex flex-col md:px-20 lg:px-22">
        {/* Section title */}
       <div className="flex flex-col items-center mb-8 md:mb-10">
-        <p className="text-2xl font-medium uppercase">All Products</p>
+        <p className="text-2xl md:text-3xl text-center mb-2 font-semibold">All Products</p>
         <div className="w-16 h-0.5 bg-primary rounded-full"></div>
       </div>
 

@@ -69,6 +69,12 @@ import vanilla_muffins_image from "./vanilla_muffins_image.png";
 import quinoa_image from "./quinoa_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import barley_image from "./barley_image.png";
+import bottles1_image from "./bottles1_image.png";
+import fresh_fruits1_image from "./fresh_fruits1_image.jpg";
+import bakery_image1 from "./bakery_image1.jpg";
+import maggi_image1 from "./maggi_image1.jpg";
+import chocolate_cake_image1 from "./chocolate_cake_image1.jpg";
+import grain_image1 from "./grain_image1.png"
 
 import location_icon from "./location_icon.png";
 import phone_icon from "./phone_icon.png";
@@ -76,6 +82,7 @@ import email_icon from "./email_icon.png";
 import clock_icon from "./clock_icon.png";
 
 export const assets = {
+
   logo,
   search_icon,
   remove_icon,
@@ -103,6 +110,18 @@ export const assets = {
   bottom_banner_image_sm,
   add_address_iamge,
   box_icon,
+  fresh_fruits_image,
+  bottles_image,
+  bottles1_image,
+  fresh_fruits1_image,
+  dairy_product_image,
+  organic_vegitable_image,
+  bakery_image1,
+  maggi_image1,
+  grain_image,
+  chocolate_cake_image,
+  chocolate_cake_image1,
+  grain_image1,
 
   location_icon,
   phone_icon,

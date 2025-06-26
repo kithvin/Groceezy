@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false); // State for mobile menu toggle
-  const { user, setUser, setshowUserLogin, navigate } = useAppContext(); // Get context values
+  const { user, setUser, setshowUserLogin, navigate, setSearchQuery, searchQuery } = useAppContext(); // Get context values
 
   // Logout function
   const logout = async () => {
     setUser(null);
     navigate("/");
   };
+
+  useEffect(() => {
+    if(searchQuery.length > 0) {
+      navigate("/products");
+    }
+  }, [searchQuery]);
 
   return (
     <nav
@@ -46,7 +52,7 @@ const Navbar = () => {
         {/* Search Bar */}
 
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
-          <input
+          <input onChange={(e) => setSearchQuery(e.target.value)}
             className="py-1.5 w-36 bg-transparent outline-none placeholder-gray-500 text-center"
             type="text"
             placeholder="Search products"

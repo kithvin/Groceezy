@@ -11,7 +11,7 @@ const Categories = () => {
 
       {/* Title */}
 
-      <p className="text-2xl md:text-3xl text-center mb-10 font-semibold">Categories</p>
+      <p className="text-2xl md:text-3xl font-semibold text-center mb-10">Categories</p>
 
       {/* Category items in a grid */}
 

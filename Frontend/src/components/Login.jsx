@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppContext } from "../context/AppContext"; // import global context
 
-function Login() {
+const Login = () => {
   // Access global context functions for setting user and toggling modal visibility
   const { setshowUserLogin, setUser } = useAppContext();
 

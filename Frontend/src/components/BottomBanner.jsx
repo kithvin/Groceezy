@@ -119,7 +119,7 @@
 import React from "react";
 import { assets, features } from "../assets/assets"; // Import images and feature data
 
-function BottomBanner() {
+const BottomBanner = () => {
   return (
     <div className="scale-[0.95] relative"> {/* Slight zoom effect on the whole section */}
       

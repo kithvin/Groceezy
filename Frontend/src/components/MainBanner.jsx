@@ -52,7 +52,7 @@ const MainBanner = () => {
           {/* Explore Deals button */}
 
           <Link
-            to={"/products"}
+            to={"/deals"}
             className="group hidden md:flex items-center gap-2 px-9 py-3 cursor-pointer"
           >
             Explore Deals

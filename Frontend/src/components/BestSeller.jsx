@@ -37,7 +37,7 @@ import { useAppContext } from '../context/AppContext'
 const BestSeller = () => {
   const { products } = useAppContext(); // Get products from context
   return (
-    <div className='mt-16 px-4 md:px-8 lg:px-20'>
+    <div className='mt-16 px-4 md:px-20 lg:px-36'>
     <p className='text-2xl md:text-3xl font-semibold text-center mb-10'>Best Seller</p>
     <div className='grid sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-6 lg:grid-cols-5 mt-6 justify-center'>
       {products.filter((product) => product.inStock) 
