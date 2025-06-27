@@ -49,12 +49,12 @@ const MainBanner = () => {
             />
           </Link>
 
-          {/* Explore Deals button */}
-
+          {/* Explore Deals button */} 
+          {/* className remove hiddden for view exp,ore deals view in mobile */} 
           <Link
-            to={"/deals"}
-            className="group hidden md:flex items-center gap-2 px-9 py-3 cursor-pointer"
-          >
+            to={"/deals"} 
+            className="group md:flex items-center gap-2 px-9 py-3 cursor-pointer"
+          > 
             Explore Deals
             <img
               className="transition group-hover:translate-x-1"

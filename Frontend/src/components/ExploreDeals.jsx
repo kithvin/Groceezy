@@ -430,9 +430,11 @@ const ExploreDeals = () => {
   return (
     <div className="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        
         {/* Header Section */}
-        <div className="text-center mb-10">
-          <div className="flex items-center justify-center mb-4 mt-2">
+
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center mb-4 mt-12">
             <img
               src={assets.leaf_icon}
               alt="Leaf Icon"
@@ -450,6 +452,7 @@ const ExploreDeals = () => {
         </div>
 
         {/* Deals Grid - Now directly navigates to category */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
           {displayedDeals.map((deal) => (
             <div
