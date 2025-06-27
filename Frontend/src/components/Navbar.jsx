@@ -115,7 +115,7 @@ const Navbar = () => {
             border border-gray-200 py-2.5 w-30 rounded-md text-sm z-40"
             >
               <li
-                onClick={() => navigate("my-order")}
+                onClick={() => navigate("my-orders")}
                 className="p-1.5 pl-3 hover:bg-primary/10 cursor-pointer"
               >
                 My Order

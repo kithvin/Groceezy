@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Contact from "./pages/Contact";
@@ -13,6 +13,8 @@ import ExploreDeals from "./components/ExploreDeals";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import AddAddress from "./pages/AddAddress";
+import MyOrders from "./pages/MyOrders";
+
 
 const App = () => {
 
@@ -32,6 +34,7 @@ const App = () => {
           <Route path="/products/:category/:id" element={<ProductDetails />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/add-address" element={<AddAddress />} />
+          <Route path="/my-orders" element={<MyOrders />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/deals" element={<ExploreDeals />} />
           <Route path="/contact" element={<Contact />} />

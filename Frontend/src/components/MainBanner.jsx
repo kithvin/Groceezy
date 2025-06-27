@@ -32,12 +32,12 @@ const MainBanner = () => {
         </h1>
 
         {/* Buttons */}
-
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-10 w-full sm:w-auto">
+        <div className="mt-2">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10 sm:mt-10 sm:w-auto">
           {/* Shop Now button */}
           <Link
             to={"/products"}
-            className="w-72 sm:w-auto mx-auto text-center group flex justify-center gap-2 px-5 sm:px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition-all duration-200 rounded-lg text-white cursor-pointer font-medium"
+            className="w-60 sm:w-auto mx-auto text-center group flex justify-center gap-2 px-5 sm:px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition-all duration-200 rounded-lg text-white cursor-pointer font-medium"
           >
             Shop Now
           </Link>
@@ -45,10 +45,11 @@ const MainBanner = () => {
           {/* Explore Deals button */}
           <Link
             to={"/deals"}
-            className="w-72 sm:w-auto mx-auto text-center group flex justify-center gap-2 px-5 sm:px-7 md:px-9 py-3 bg-blue-500 hover:bg-blue-600 transition-all duration-200 rounded-lg text-white cursor-pointer font-medium"
+            className="w-60 sm:w-auto mx-auto text-center group flex justify-center gap-2 px-5 sm:px-7 md:px-9 py-3 bg-blue-500 hover:bg-blue-600 transition-all duration-200 rounded-lg text-white cursor-pointer font-medium"
           >
             Explore Deals
           </Link>
+          </div>
         </div>
       </div>
     </div>
