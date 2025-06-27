@@ -33,36 +33,25 @@ const MainBanner = () => {
 
         {/* Buttons */}
 
-        <div className="flex items-center mt-15 font-medium">
-          
-          {/* Shop Now button */}
+        <div className="flex flex-wrap gap-2 items-center mt-15 font-medium">
+  {/* Shop Now button */}
+  <Link
+    to={"/products"}
+    className="group flex items-center gap-2 px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition rounded text-white cursor-pointer"
+  >
+    Shop Now
+  </Link>
 
-          <Link
-            to={"/products"}
-            className="group flex items-center gap-2 px-7 md:px-9 py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer"
-          >
-            Shop Now
-            <img
-              className="md:hidden transition group-focus:translate-x-1"
-              src={assets.white_arrow_icon}
-              alt="arrow"
-            />
-          </Link>
+  {/* Explore Deals button */}
+  <Link
+    to={"/deals"}
+    className="group flex items-center gap-2 px-7 md:px-9 py-3 bg-blue-500 hover:bg-blue-600 transition rounded text-white cursor-pointer"
+  >
+    Explore Deals
+  </Link>
+</div>
 
-          {/* Explore Deals button */} 
-          {/* className remove hiddden for view exp,ore deals view in mobile */} 
-          <Link
-            to={"/deals"} 
-            className="group md:flex items-center gap-2 px-9 py-3 cursor-pointer"
-          > 
-            Explore Deals
-            <img
-              className="transition group-hover:translate-x-1"
-              src={assets.black_arrow_icon}
-              alt="arrow"
-            />
-          </Link>
-        </div>
+       
       </div>
     </div>
   );
