@@ -33,29 +33,26 @@ const MainBanner = () => {
 
         {/* Buttons */}
 
-        <div className="flex flex-wrap gap-2 items-center mt-15 font-medium">
-  {/* Shop Now button */}
-  <Link
-    to={"/products"}
-    className="group flex items-center gap-2 px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition rounded text-white cursor-pointer"
-  >
-    Shop Now
-  </Link>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-10 w-full sm:w-auto">
+          {/* Shop Now button */}
+          <Link
+            to={"/products"}
+            className="w-72 sm:w-auto mx-auto text-center group flex justify-center gap-2 px-5 sm:px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition-all duration-200 rounded-lg text-white cursor-pointer font-medium"
+          >
+            Shop Now
+          </Link>
 
-  {/* Explore Deals button */}
-  <Link
-    to={"/deals"}
-    className="group flex items-center gap-2 px-7 md:px-9 py-3 bg-blue-500 hover:bg-blue-600 transition rounded text-white cursor-pointer"
-  >
-    Explore Deals
-  </Link>
-</div>
-
-       
+          {/* Explore Deals button */}
+          <Link
+            to={"/deals"}
+            className="w-72 sm:w-auto mx-auto text-center group flex justify-center gap-2 px-5 sm:px-7 md:px-9 py-3 bg-blue-500 hover:bg-blue-600 transition-all duration-200 rounded-lg text-white cursor-pointer font-medium"
+          >
+            Explore Deals
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 export default MainBanner;
-

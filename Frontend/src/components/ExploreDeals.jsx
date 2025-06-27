@@ -9,68 +9,80 @@ const ExploreDeals = () => {
     {
       id: 1,
       title: "30% Off on Fresh Fruits",
-      description: "Juicy and sweet fruits straight from the farm. Limited time only!",
-      longDescription: "Enjoy 30% discount on all fresh fruits including apples, oranges, bananas, and more. These fruits are sourced directly from organic farms and delivered fresh to your doorstep. Offer valid until stock lasts.",
+      description:
+        "Juicy and sweet fruits straight from the farm. Limited time only!",
+      longDescription:
+        "Enjoy 30% discount on all fresh fruits including apples, oranges, bananas, and more. These fruits are sourced directly from organic farms and delivered fresh to your doorstep. Offer valid until stock lasts.",
       image: assets.fresh_fruits1_image,
       category: "Fruits",
       route: "fruits",
       discount: "30% OFF",
       validUntil: "2025-12-31",
-      terms: "Minimum order of ₹200 applies. Cannot be combined with other offers.",
+      terms:
+        "Minimum order of ₹200 applies. Cannot be combined with other offers.",
     },
     {
       id: 2,
       title: "Buy 1 Get 1 Free - Cold Drinks",
       description: "Refresh yourself with our premium beverage selection.",
-      longDescription: "Buy any 1 cold drink bottle (1L or above) and get another one absolutely free! Choose from Coca-Cola, Pepsi, Sprite, Fanta and more. Perfect for parties and gatherings.",
+      longDescription:
+        "Buy any 1 cold drink bottle (1L or above) and get another one absolutely free! Choose from Coca-Cola, Pepsi, Sprite, Fanta and more. Perfect for parties and gatherings.",
       image: assets.bottles1_image,
       category: "Drinks",
       route: "drinks",
       discount: "BOGO",
       validUntil: "2025-11-30",
-      terms: "Applicable on 1L and 1.5L bottles only. Limited to 2 free bottles per order.",
+      terms:
+        "Applicable on 1L and 1.5L bottles only. Limited to 2 free bottles per order.",
     },
     {
       id: 3,
       title: "25% Off on Dairy Products",
       description: "Fresh milk, cheese and more at discounted prices.",
-      longDescription: "Get 25% off on all dairy products including milk, cheese, butter, yogurt and paneer. Our dairy products come from trusted farms with highest quality standards.",
+      longDescription:
+        "Get 25% off on all dairy products including milk, cheese, butter, yogurt and paneer. Our dairy products come from trusted farms with highest quality standards.",
       image: assets.dairy_product_image,
       category: "Dairy",
       route: "dairy",
       discount: "25% OFF",
       validUntil: "2025-12-15",
-      terms: "Valid on all dairy products except Amul brand. No minimum order value.",
+      terms:
+        "Valid on all dairy products except Amul brand. No minimum order value.",
     },
     {
       id: 4,
       title: "40% Off Organic Vegetables",
       description: "Farm fresh organic veggies for healthy cooking.",
-      longDescription: "Enjoy 40% discount on our range of organic vegetables including potatoes, tomatoes, onions, spinach and more. Grown without pesticides and chemical fertilizers.",
+      longDescription:
+        "Enjoy 40% discount on our range of organic vegetables including potatoes, tomatoes, onions, spinach and more. Grown without pesticides and chemical fertilizers.",
       image: assets.organic_vegitable_image,
       category: "Vegetables",
       route: "vegetables",
       discount: "40% OFF",
       validUntil: "2025-12-10",
-      terms: "Applicable only on organic vegetables section. Minimum order of ₹300.",
+      terms:
+        "Applicable only on organic vegetables section. Minimum order of ₹300.",
     },
     {
       id: 5,
       title: "Special Combo on Bakery Items",
       description: "Bread, cakes and pastries at unbeatable prices!",
-      longDescription: "Special combo offers on bakery items - buy any 3 bakery products and get 15% off, buy any 5 and get 25% off. Includes bread, cakes, cookies, muffins and more.",
+      longDescription:
+        "Special combo offers on bakery items - buy any 3 bakery products and get 15% off, buy any 5 and get 25% off. Includes bread, cakes, cookies, muffins and more.",
       image: assets.bakery_image1,
       category: "Bakery",
       route: "bakery",
       discount: "COMBO",
       validUntil: "2025-12-20",
-      terms: "Discount applies on total bakery items in cart. Cannot be combined with other bakery offers.",
+      terms:
+        "Discount applies on total bakery items in cart. Cannot be combined with other bakery offers.",
     },
     {
       id: 6,
       title: "20% Off Instant Food Packs",
       description: "Quick meals for your busy schedule.",
-      longDescription: "Get 20% off on all instant food packs including noodles, soups, pasta and ready-to-eat meals. Perfect solution for quick meals when you're short on time.",
+      longDescription:
+        "Get 20% off on all instant food packs including noodles, soups, pasta and ready-to-eat meals. Perfect solution for quick meals when you're short on time.",
       image: assets.maggi_image1,
       category: "Instant",
       route: "instant",
@@ -82,7 +94,8 @@ const ExploreDeals = () => {
       id: 7,
       title: "15% Off Grains & Cereals",
       description: "Premium quality grains for your kitchen.",
-      longDescription: "Enjoy 15% discount on all grains and cereals including rice, wheat, quinoa, barley and more. Stock up your pantry with these healthy staples.",
+      longDescription:
+        "Enjoy 15% discount on all grains and cereals including rice, wheat, quinoa, barley and more. Stock up your pantry with these healthy staples.",
       image: assets.grain_image1,
       category: "Grains",
       route: "grains",
@@ -94,13 +107,15 @@ const ExploreDeals = () => {
       id: 8,
       title: "Buy 2 Get 1 Free - Chocolates",
       description: "Sweet deals on your favorite chocolates.",
-      longDescription: "Buy any 2 chocolate bars and get 1 free! Choose from dairy milk, dark chocolate, nut-filled varieties and more. Perfect for gifting or personal indulgence.",
+      longDescription:
+        "Buy any 2 chocolate bars and get 1 free! Choose from dairy milk, dark chocolate, nut-filled varieties and more. Perfect for gifting or personal indulgence.",
       image: assets.chocolate_cake_image1,
       category: "Bakery",
       route: "bakery",
       discount: "B2G1",
       validUntil: "2025-12-18",
-      terms: "Free chocolate of equal or lesser value. Limited to 3 free chocolates per order.",
+      terms:
+        "Free chocolate of equal or lesser value. Limited to 3 free chocolates per order.",
     },
   ];
 
@@ -114,26 +129,49 @@ const ExploreDeals = () => {
   return (
     <div className="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        
         {/* Header Section */}
 
+        {/* <div className="text-center mb-16">
+          <div className="flex items-center justify-center mb-4 mt-6 sm:mt-12">
+            <img
+              src={assets.leaf_icon}
+              alt="Leaf Icon"
+              className="h-10 w-6 sm:h-16 sm:w-8 mr-2"
+            />
+            
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+              {showAllDeals
+                ? "All Exclusive Deals"
+                : "Exclusive Deals & Offers"}
+              <div className="w-84 h-0.5 bg-primary rounded-full"></div>
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mt-6 sm:mt-8">
+            {showAllDeals
+              ? "Browse through all our current offers"
+              : "Discover amazing discounts on your favorite grocery items"}
+          </p>
+        </div> */}
+
         <div className="text-center mb-16">
-  <div className="flex items-center justify-center mb-4 mt-6 sm:mt-12">
-    <img
-      src={assets.leaf_icon}
-      alt="Leaf Icon"
-      className="h-10 w-6 sm:h-16 sm:w-8 mr-2"
-    />
-    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-      {showAllDeals ? "All Exclusive Deals" : "Exclusive Deals & Offers"}
-    </h1>
-  </div>
-  <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mt-6 sm:mt-8">
-    {showAllDeals
-      ? "Browse through all our current offers"
-      : "Discover amazing discounts on your favorite grocery items"}
-  </p>
-</div>
+          <div className="flex flex-col items-center justify-center mb-4 mt-6 sm:mt-12">
+            <div className="relative pb-4">
+              {" "}
+              {/* Added container for positioning */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                {showAllDeals
+                  ? "All Exclusive Deals"
+                  : "Exclusive Deals & Offers"}
+              </h1>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+            </div>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mt-6 sm:mt-8">
+            {showAllDeals
+              ? "Browse through all our current offers"
+              : "Discover amazing discounts on your favorite grocery items"}
+          </p>
+        </div>
 
         {/* Deals Grid - Now directly navigates to category */}
 
