@@ -18,3 +18,10 @@
     --color-primary : #4fbf8b; /* Custom primary color */
     --color-primary-dull : #44ae7c;
 }
+
+/* Hide scrollbar for WebKit browsers like Chrome, Safari, and Edge Chromium */
+
+.no-scrollbar::-webkit-scrollbar{
+    display: none;
+  }
+  
