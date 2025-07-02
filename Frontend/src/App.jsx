@@ -3,17 +3,20 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import Login from "./components/Login";
 import ExploreDeals from "./components/ExploreDeals";
 import Home from "./pages/Home";
 import { Toaster } from "react-hot-toast";
+import { useAppContext } from "./context/AppContext";
 
 const App = () => {
-  const isSellerPath = useLocation().pathname.includes("/seller");
 
+  const isSellerPath = useLocation().pathname.includes("/seller");
+  const {showUserLogin, isSeller} = useAppContext();
   return (
     <div className="text-default min-h-screen text-gray-700 bg-white">
       {isSellerPath ? null : <Navbar />}
-
+      {showUserLogin ? <Login/> : null}
       <Toaster />
 
       <div
