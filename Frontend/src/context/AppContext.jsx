@@ -63,20 +63,25 @@ export const AppContextProvider = ({ children }) => {
       }
   }
 
+  // Fetch dummy product data
+
+  const fetchProducts = async () => {
+    setProducts(dummyProducts);
+  };
 
   // Fetch product data (dummy data)
-  const fetchProducts = async () => {
-    try {
-      const {data} = await axios.get('/api/product/list')
-      if(data.success){
-        setProducts(data.products)
-      }else{
-        toast.error(data.message)
-      }
-    } catch (error) {
-      toast.error(error.message)
-    }
-  };
+  // const fetchProducts = async () => {
+  //   try {
+  //     const {data} = await axios.get('/api/product/list')
+  //     if(data.success){
+  //       setProducts(data.products)
+  //     }else{
+  //       toast.error(data.message)
+  //     }
+  //   } catch (error) {
+  //     toast.error(error.message)
+  //   }
+  // };
 
   /* Function to add product to the cart */
   const addToCart = (itemId) => {
