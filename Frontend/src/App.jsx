@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import { useAppContext } from "./context/AppContext";
 import AllProducts from "./pages/AllProducts";
 import ProductCategory from "./pages/ProductCategory";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products" element={<AllProducts />} />
+          <Route path="/products/:category/:id" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/deals" element={<ExploreDeals />} />
         </Routes>
