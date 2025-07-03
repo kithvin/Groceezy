@@ -44,7 +44,7 @@ const AddAddress = () => {
   return (
     <div className="mt-16 pb-16 ml-12">
       {/* Title */}
-      <p className="text-2xl md:text-3xl text-gray-500 ml-8">
+      <p className="text-2xl md:text-3xl text-gray-500 text-center md:text-left px-4 md:px-0 md:ml-8 -ml-4">
         Add <span className="font-semibold text-primary">Your</span> Shipping{" "}
         <span className="font-semibold text-primary">Address</span>
       </p>
