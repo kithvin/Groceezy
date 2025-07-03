@@ -139,17 +139,29 @@ export const AppContextProvider = ({ children }) => {
   };
 
   /* Get Cart Total Amount */
+   // this have some issue i provide below some code.if below oce not woking uncomment given code and use this
+  // const getCartAmount = () =>{
+  //   let totalAmount = 0;
+  //   for (const items in cartItems){
+  //     let itemInfo = products.find((product)=> product._id === items); // Find product info by ID
+  //     if(cartItems[items] > 0){
+  //       totalAmount += itemInfo.offerPrice * cartItems[items]; // Calculate total price
+  //     }
+  //   }
+  //   return Math.floor(totalAmount * 100) / 100; // Round to two decimal places
+  // }
 
-  const getCartAmount = () =>{
+  const getCartAmount = () => {
     let totalAmount = 0;
-    for (const items in cartItems){
-      let itemInfo = products.find((product)=> product._id === items); // Find product info by ID
-      if(cartItems[items] > 0){
+    for (const items in cartItems) {
+      let itemInfo = products.find((product) => product._id === items); // Find product info by ID
+      if (itemInfo && cartItems[items] > 0) {
         totalAmount += itemInfo.offerPrice * cartItems[items]; // Calculate total price
       }
     }
     return Math.floor(totalAmount * 100) / 100; // Round to two decimal places
-  }
+  };
+  
 
   // Fetch products when the component mounts
   useEffect(() => {
