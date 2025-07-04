@@ -4,6 +4,7 @@ import cors from "cors"; // To enable CORS for handling cross-origin requests
 import connectDB from "./configs/db.js"; // Custom function to connect to MongoDB
 import "dotenv/config"; // To load environment variables from .env file
 import userRouter from "./routes/userRouter.js"; // Import user routes
+import sellerRouter from "./routes/sellerRouter.js"; // Import seller routes
 
 const app = express(); // Initialize the Express application
 const port = process.env.PORT || 5000; // Define server port
@@ -29,6 +30,8 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/user', userRouter); // All user-related routes start with /api/user
+
+app.use('/api/seller', sellerRouter); // All seller-related routes start with /api/seller
 
 // Start the server and listen on the defined port
 app.listen(port, () => {
