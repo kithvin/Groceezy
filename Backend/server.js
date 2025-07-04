@@ -7,6 +7,8 @@ import userRouter from "./routes/userRouter.js"; // Import user routes
 import sellerRouter from "./routes/sellerRouter.js"; // Import seller routes
 import connectCloudinary from "./configs/cloudinary.js"; // Import Cloudinary routes
 import productRouter from "./routes/productRouter.js"; // Import product routes
+import cartRouter from "./routes/cartRouter.js"; // Import cart routes
+import addressRouter from "./routes/addressRouter.js";
 
 const app = express(); // Initialize the Express application
 const port = process.env.PORT || 5000; // Define server port
@@ -39,6 +41,10 @@ app.use('/api/user', userRouter); // All user-related routes start with /api/use
 app.use('/api/seller', sellerRouter); // All seller-related routes start with /api/seller
 
 app.use('/api/product', productRouter); // All product-related routes start with /api/product
+
+app.use('/api/cart', cartRouter) // All cart-related routes start with /api/product
+
+app.use("/api/address", addressRouter); // All address-related routes start with /api/address
 
 // Start the server and listen on the defined port
 app.listen(port, () => {
