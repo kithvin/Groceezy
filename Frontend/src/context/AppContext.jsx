@@ -191,7 +191,7 @@ export const AppContextProvider = ({ children }) => {
     getCartAmount, // Function to get total cart amount
     getCartCount, // Function to get total item count in cart
     axios, // import axios fro api call
-    fetchProducts
+    fetchProducts // import fetchProducts fro api call
   };
 
   // Providing the context to children components
