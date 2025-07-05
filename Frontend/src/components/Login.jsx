@@ -14,31 +14,25 @@ const Login = () => {
 
   // Handle form submission (login or register)
   const onSubmitHandler = async (event) => {
-    // try {
+    try {
       event.preventDefault();
 
-      setUser({
-        email: "test@gmail.com",
-        name: "test"
-      })
-      setshowUserLogin(false);
+      const { data } = await axios.post(`/api/user/${state}`, {
+        name,
+        email,
+        password,
+      });
 
-    //   const { data } = await axios.post(`/api/user/${state}`, {
-    //     name,
-    //     email,
-    //     password,
-    //   });
-
-    //   if (data.success) {
-    //     navigate("/");
-    //     setUser(data.user);
-    //     setshowUserLogin(false); // Close the login modal after submission
-    //   } else {
-    //     toast.error(data.message);
-    //   }
-    // } catch (error) {
-    //   toast.error(error.message);
-    // }
+      if (data.success) {
+        navigate("/");
+        setUser(data.user);
+        setshowUserLogin(false); // Close the login modal after submission
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
 
     e.preventDefault();
     console.log("Submitted:", { name, email, password, mode: state });
