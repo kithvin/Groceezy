@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema(
     price: { type: Number, required: true },
 
     // Product OfferPrice (required)
-    OfferPrice: { type: Number, required: true },
+    offerPrice: { type: Number, required: true },
 
     // Product image (required)
     image: { type: Array, required: true },
