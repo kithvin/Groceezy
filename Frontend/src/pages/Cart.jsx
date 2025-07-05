@@ -238,7 +238,6 @@ const Cart = () => {
             <p className="text-xs md:text-sm font-medium uppercase mt-4 md:mt-6">
               Payment Method
             </p>
-
             <select
               onChange={(e) => setPaymentoption(e.target.value)}
               className="w-full border border-gray-300 bg-white px-2 py-1.5 md:px-3 md:py-2 mt-1 md:mt-2 outline-none text-sm md:text-base appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjYgOSAxMiAxNSAxOCA5Ij48L3BvbHlsaW5lPjwvc3ZnPg==')] bg-no-repeat bg-[right_0.5rem_center] bg-[length:1em_1em] pr-8 cursor-pointer"
