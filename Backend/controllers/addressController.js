@@ -6,7 +6,9 @@ import Address from "../models/Address.js";
 
 export const addAddress = async (req, res) => {
   try {
-    const { address, userId } = req.body;
+    // const { address, userId } = req.body;
+    const { address } = req.body;
+    const userId = req.user.id;
 
     // Create a new address record in the database with the associated user ID
     await Address.create({ ...address, userId });
@@ -25,7 +27,8 @@ export const addAddress = async (req, res) => {
 
 export const getAddress = async (req, res) => {
   try {
-    const { userId } = req.body;
+    // const { userId } = req.body;
+    const userId = req.user.id;
 
     // Find all address records associated with the given user ID
     const addresses = await Address.find({ userId });
