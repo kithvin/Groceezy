@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { dummyProducts } from "../assets/assets"; // Import dummy product data
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
@@ -38,10 +37,10 @@ export const AppContextProvider = ({ children }) => {
   // Fetch Seller Status
   const fetchSeller = async () => {
     try {
-      const {data} = await axios.get('/api/seller/is-auth');
-      if(data.success){
+      const { data } = await axios.get("/api/seller/is-auth");
+      if (data.success) {
         setIsSeller(true);
-      }else{
+      } else {
         setIsSeller(false);
       }
     } catch (error) {
@@ -51,37 +50,32 @@ export const AppContextProvider = ({ children }) => {
 
   // Fetch User Auth Status , user Data and Cart Items
 
-  const fetchUser = async ()=>{
-      try {
-        const {data} = await axios.get('api/user/is-auth');
-        if (data.success){
-          setUser(data.user)
-          setCartItems(data.user.cartItems)
-        }
-      } catch (error) {
-        setUser(null)
+  const fetchUser = async () => {
+    try {
+      const { data } = await axios.get("api/user/is-auth");
+      if (data.success) {
+        setUser(data.user);
+        setCartItems(data.user.cartItems);
       }
-  }
-
-  // Fetch dummy product data
-
-  const fetchProducts = async () => {
-    setProducts(dummyProducts);
+    } catch (error) {
+      setUser(null);
+    }
   };
 
-  // Fetch product data (dummy data)
-  // const fetchProducts = async () => {
-  //   try {
-  //     const {data} = await axios.get('/api/product/list')
-  //     if(data.success){
-  //       setProducts(data.products)
-  //     }else{
-  //       toast.error(data.message)
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.message)
-  //   }
-  // };
+  // Fetch All product
+
+  const fetchProducts = async () => {
+    try {
+      const { data } = await axios.get("/api/product/list");
+      if (data.success) {
+        setProducts(data.products);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   /* Function to add product to the cart */
   const addToCart = (itemId) => {
@@ -139,7 +133,7 @@ export const AppContextProvider = ({ children }) => {
   };
 
   /* Get Cart Total Amount */
-   // this have some issue i provide below some code.if below oce not woking uncomment given code and use this
+  // this have some issue i provide below some code.if below oce not woking uncomment given code and use this
   // const getCartAmount = () =>{
   //   let totalAmount = 0;
   //   for (const items in cartItems){
@@ -161,7 +155,6 @@ export const AppContextProvider = ({ children }) => {
     }
     return Math.floor(totalAmount * 100) / 100; // Round to two decimal places
   };
-  
 
   // Fetch products when the component mounts
   useEffect(() => {
@@ -191,7 +184,7 @@ export const AppContextProvider = ({ children }) => {
     getCartAmount, // Function to get total cart amount
     getCartCount, // Function to get total item count in cart
     axios, // import axios fro api call
-    fetchProducts // import fetchProducts fro api call
+    fetchProducts, // import fetchProducts fro api call
   };
 
   // Providing the context to children components

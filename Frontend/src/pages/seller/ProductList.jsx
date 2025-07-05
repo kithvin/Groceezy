@@ -1,7 +1,5 @@
 import React from "react";
-// Importing custom context to access global state like products and currency
 import { useAppContext } from "../../context/AppContext";
-import axios from "axios";
 import toast from "react-hot-toast";
 
 const ProductList = () => {
@@ -10,7 +8,7 @@ const ProductList = () => {
 
   const toggleStock = async (id, inStock) => {
     try {
-      const { data } = await axios.post("/api/product/stock", { id, inStock });
+      const { data } = await axios.post('/api/product/stock', { id, inStock });
       if (data.success) {
         fetchProducts();
         toast.success(data.message);
@@ -66,7 +64,7 @@ const ProductList = () => {
                   {/* Offer price, shown only on medium screens and above */}
                   <td className="px-10 py-3 max-sm:hidden">
                     {currency}
-                    {product.OfferPrice}
+                    {product.offerPrice}
                   </td>
 
                   {/* Toggle switch for stock availability (UI only for now) */}
@@ -74,8 +72,8 @@ const ProductList = () => {
                     <label className="relative inline-flex items-center cursor-pointer text-gray-900 gap-3">
                       <input
                         onClick={() =>
-                          toggleStock(product._id, !product.inStock)
-                        }
+                        toggleStock(product._id, !product.inStock)}
+                        onChange={() => {}} // if any issue product list or seeler dahsbord remove this
                         checked={product.inStock}
                         type="checkbox"
                         className="sr-only peer"
