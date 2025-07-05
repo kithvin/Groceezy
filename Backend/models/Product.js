@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema(
     image: { type: Array, required: true },
 
     // Product category(required)
-    category: { type: Array, required: true },
+    category: { type: String, required: true },
 
     // Boolean flag to indicate if the item is currently in stock; defaults to true
     inStock: { type: Boolean, default: true },
