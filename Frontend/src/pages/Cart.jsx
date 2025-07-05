@@ -58,12 +58,22 @@ const Cart = () => {
       }
       // Place order with COD
       if(paymentoption === "COD"){
-        const {data} = await axios.post('/api/order/cod',{
-          userId: user._id,
-          items: cartArray.map(item=>({product:item._id,
-            quantity : item.quantity
-          })),address: selectedAddress._id
+        // const {data} = await axios.post('/api/order/cod',{
+        //   userId: user._id,
+        //   items: cartArray.map(item=>({product:item._id,
+        //     quantity : item.quantity
+        //   })),address: selectedAddress._id
+        // });
+
+        const { data } = await axios.post('/api/order/cod', {
+          items: cartArray.map(item => ({
+            product: item._id,
+            quantity: item.quantity,
+          })),
+          address: selectedAddress._id,
         });
+
+        
         if(data.success){
           toast.success(data.message);
           setCartItems({});

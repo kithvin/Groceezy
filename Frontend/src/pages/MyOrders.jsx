@@ -1,23 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
-import { dummyOrders } from "../assets/assets";
 
 const MyOrders = () => {
   // State to store orders
-  const [MyOrders, setMyOrders] = useState([]);
+  const [myOrders, setMyOrders] = useState([]);
 
   // Get currency symbol from context
-  const { currency } = useAppContext();
+  const { currency, axios, user } = useAppContext();
 
-  // Load dummy orders
+
   const fetchMyorders = async () => {
-    setMyOrders(dummyOrders);
+    try {
+      const { data } = await axios.get('/api/order/user');
+      if (data.success) {
+        setMyOrders(data.orders);
+      }
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+    }
   };
+  
+
+//   const fetchMyorders = async () => {
+//   try {
+//     const { data } = await axios.get('/api/order/user'); // Changed to GET
+//     if(data.success) {
+//       console.log("Orders data:", data.orders); // Debug log
+//       setMyOrders(data.orders);
+//     }
+//   } catch (error) {
+//     console.error("Error fetching orders:", error);
+//   }
+// };
 
   // Fetch orders on component mount
   useEffect(() => {
-    fetchMyorders();
-  }, []);
+    if(user){
+      fetchMyorders();
+    }
+  }, [user]);
 
   return (
     <div className="mt-16 pb-16">
@@ -30,7 +51,7 @@ const MyOrders = () => {
       </div>
 
       {/* Loop through orders */}
-      {MyOrders.map((order, index) => (
+      {myOrders.map((order, index) => (
         <div
           key={index}
           className="border border-gray-300 rounded-lg mb-10 p-4 py-5 w-full mx-auto max-w-4xl"

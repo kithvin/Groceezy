@@ -16,8 +16,10 @@ import authSeller from "../middlewares/authSeller.js";
 const orderRouter = express.Router();
 
 // Place order using Cash on Delivery (COD) - Only accessible by authenticated users
+// orderRouter.post("/cod", authUser, placeOrderCOD);
 orderRouter.post("/cod", authUser, placeOrderCOD);
 // Get orders for a specific user - Only accessible by authenticated users
+// orderRouter.get("/user", authUser, getUserOrders);
 orderRouter.get("/user", authUser, getUserOrders);
 // Get all orders - Only accessible by authenticated sellers/admins
 orderRouter.get("/seller", authSeller, getAllOrders);
