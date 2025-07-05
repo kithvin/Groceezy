@@ -35,7 +35,7 @@ function AddProduct() {
         description : description.split('\n'),
         category,
         price,
-        OfferPrice: offerPrice 
+        offerPrice 
       }
 
     const formData = new FormData();
