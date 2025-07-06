@@ -8,7 +8,8 @@ import authUser from "../middlewares/authUser.js";
 import {
   getAllOrders, // Get all orders (admin/seller view)
   getUserOrders, // Get all orders placed by a specific user
-  placeOrderCOD, // Place an order using Cash on Delivery
+  placeOrderCOD,
+  placeOrderStripe, // Place an order using Cash on Delivery
 } from "../controllers/orderController.js";
 import authSeller from "../middlewares/authSeller.js";
 
@@ -23,5 +24,7 @@ orderRouter.post("/cod", authUser, placeOrderCOD);
 orderRouter.get("/user", authUser, getUserOrders);
 // Get all orders - Only accessible by authenticated sellers/admins
 orderRouter.get("/seller", authSeller, getAllOrders);
+
+orderRouter.post("/stripe", authUser, placeOrderStripe);
 
 export default orderRouter; // Export the router for use in the main application
