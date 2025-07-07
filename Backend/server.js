@@ -10,12 +10,15 @@ import productRouter from "./routes/productRouter.js"; // Import product routes
 import cartRouter from "./routes/cartRouter.js"; // Import cart routes
 import addressRouter from "./routes/addressRouter.js"; // Import Address routes
 import orderRouter from "./routes/orderRouter.js"; // Import Order routes
+import { stripeWebhooks } from "./controllers/orderController.js";
 
 const app = express(); // Initialize the Express application
 const port = process.env.PORT || 5000; // Define server port
 
 // Define allowed origins for CORS
 const allowedOrigins = ["http://localhost:3000"];
+
+app.post('/stripe', express.raw({type: 'application/json'}), stripeWebhooks);
 
 // Connect to MongoDB database
 await connectDB();
