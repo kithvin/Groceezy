@@ -1,7 +1,7 @@
 // Import required models
 import Product from "../models/Product.js";
 import Order from "../models/Order.js";
-import Stripe from "stripe";
+import stripe from "stripe"
 import User from "../models/User.js";
 
 // Controller to place an order with Cash on Delivery
@@ -81,7 +81,7 @@ export const placeOrderStripe = async (req, res) => {
 
     // Stripe Gateway Initialize
 
-    const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
+    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
     // Create line items for stripe
 
@@ -121,7 +121,7 @@ export const placeOrderStripe = async (req, res) => {
 
 export const stripeWebhooks = async (request, response)=>{
       // Stripe Gateway Initialize
-    const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
+    const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
     const sig = request.headers["stripe-signature"];
     let event;
@@ -135,7 +135,7 @@ export const stripeWebhooks = async (request, response)=>{
       );
 
     } catch (error) {
-      return response.status(400).send(`Webhook Error:${error.message}`);
+      response.status(400).send(`Webhook Error:${error.message}`);
     }
     // Handle the event
     switch (event.type) {
