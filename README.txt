@@ -6,7 +6,7 @@ Customers can browse a variety of grocery items, add them to their cart, and pla
 
 From local convenience stores to busy households, Groceasy empowers everyone to shop smarter and faster. It brings convenience, clarity, and control into the grocery ecosystem with one powerful platform.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
 
 🔥 Key Features
 
@@ -25,7 +25,8 @@ From local convenience stores to busy households, Groceasy empowers everyone to 
 📸 Image Upload – Upload item images using **Cloudinary**
 ⚙️ Seller Login – Secure authentication and access control
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 🛠️ Tech Stack
 
@@ -41,7 +42,8 @@ MongoDB with Mongoose (NoSQL database)
 Stripe API (secure checkout experience)
 Cloudinary API (media storage and CDN)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 🔧 Installed Dependencies
 
@@ -67,7 +69,8 @@ Dev Tools
 * nodemon – Development watcher
 * eslint – Code quality
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
 
  ▶️ How to Run the Groceasy Project
 
@@ -97,12 +100,44 @@ npm install
 npm run dev
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 🌐 Deployment
 
 The project is live at: [https://groceezy-kithvins-projects.vercel.app/) 
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
+⚙️ Env File
+
+* Frontend 
+
+# Currency
+VITE_CURRENCY = '$'
+
+# Backend URL
+VITE_BACKEND_URL =  "http://localhost:5000"
+
+* Backend
+
+# Secret key used for signing and verifying JWT tokens
+JWT_SECRET="secret#text"
+
+# Application running mode
+NODE_ENV = "development"
+
+# Admin Credentials
+SELLER_EMAIL = "admin@example.com"
+SELLER_PASSWORD = "admin1234"
+
+# MongoDB connection string
+MONGODB_URI = "mongodb+srv://Admin:1234@groceezy-cluster.6ibl4pn.mongodb.net/?retryWrites=true&w=majority&appName=Groceezy-Cluster"
+
+# Cloudinary
+CLOUDINARY_CLOUD_NAME = 'dc3ysm7sq'
+CLOUDINARY_API_KEY = '226853749731742'
+CLOUDINARY_API_SECRET = 'qLdBTTMPwZQC2gxluJcU-zh5A64'
+
 
