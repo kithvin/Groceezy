@@ -182,17 +182,17 @@ export const footerLinks = [
       { text: "Best Sellers", url: "#" },
       { text: "Offers & Deals", url: "#" },
       { text: "Contact Us", url: "#" },
-      { text: "FAQs", url: "#" },
+      { text: "Categories", url: "#" },
     ],
   },
   {
     title: "Need help?",
     links: [
-      { text: "Delivery Information", url: "#" },
-      { text: "Return & Refund Policy", url: "#" },
-      { text: "Payment Methods", url: "#" },
-      { text: "Track your Order", url: "#" },
-      { text: "Contact Us", url: "#" },
+      { text: "Fast Delivery", url: "#" },
+      { text: "Return & Refund Ability", url: "#" },
+      { text: "COD and Online Payment", url: "#" },
+      { text: "Fresh Items", url: "#" },
+      { text: "100% Turst", url: "#" },
     ],
   },
   {
