@@ -78,7 +78,9 @@ cd ../frontend
 npm install
 
 🔐 Environment Configuration
+
 backend/.env
+
 # JWT Secret for signing tokens
 JWT_SECRET=" your_jwt_secret "
 
