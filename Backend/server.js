@@ -11,7 +11,7 @@ import cartRouter from "./routes/cartRouter.js"; // Import cart routes
 import addressRouter from "./routes/addressRouter.js"; // Import Address routes
 import orderRouter from "./routes/orderRouter.js"; // Import Order routes
 import { stripeWebhooks } from "./controllers/orderController.js";
-
+import subscriptionRoute from "./routes/subscriptionRoute.js";
 
 const app = express(); // Initialize the Express application
 const port = process.env.PORT || 5000; // Define server port
@@ -52,6 +52,8 @@ app.use('/api/cart', cartRouter) // All cart-related routes start with /api/prod
 app.use("/api/address", addressRouter); // All address-related routes start with /api/
 
 app.use("/api/order", orderRouter); // All order-related routes start with /api/order
+
+app.use("/api/subscribe", subscriptionRoute);
 
 // Start the server and listen on the defined port
 app.listen(port, () => {
