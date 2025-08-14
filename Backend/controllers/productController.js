@@ -1,7 +1,7 @@
 // Import Cloudinary for image uploads
 import { v2 as cloudinary } from "cloudinary";
 // Import the Product model
-import Product from "../Models/Product.js";
+import Product from "../models/Product.js";
 
 // Add a new product to the database with image upload
 // Route: POST /api/product/add
