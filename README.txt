@@ -1,143 +1,117 @@
- 🛒 Groceasy – Your Smart Grocery Shopping Companion 🥦✨
+🚀 StyleCrate – The Modern MERN-Based Fashion Platform ✨
 
-Groceasy is a full-featured grocery shopping platform built with the MERN stack (MongoDB, Express.js, React, and Node.js). It’s designed to simplify everyday grocery needs for both customers and store owners. Whether you’re restocking your pantry or managing product listings as a seller, Groceasy offers a seamless and efficient experience from start to checkout.
+StyleCrate is a feature rich, responsive fashion platform built using the MERN stack (MongoDB, Express.js, React, and Node.js). It is designed to offer an elegant and enjoyable shopping experience for users while giving store managers and admins powerful tools for managing their products, orders, and customers. The platform focuses on speed, usability, and scalability, making it perfect for small boutiques, medium sized fashion stores, or large product catalogs.
 
-Customers can browse a variety of grocery items, add them to their cart, and place orders with secure Stripe-powered payments. Sellers can easily manage product inventories, view orders, and track customer interactions. With real-time cart updates, intuitive search, and responsive design, Groceasy ensures users have full control wherever they are.
+Shoppers can browse through carefully organized product categories, filter items based on their preferences, and add them to their carts in just a few clicks. The mobile optimized design ensures that browsing and purchasing are seamless on any device, whether at home on a desktop or on the go with a smartphone.
 
-From local convenience stores to busy households, Groceasy empowers everyone to shop smarter and faster. It brings convenience, clarity, and control into the grocery ecosystem with one powerful platform.
+For store managers, StyleCrate provides an intuitive and easy-to-use dashboard to handle the day-to-day operations. Adding new products, managing inventory, processing orders, and monitoring store performance can all be done in one place. Whether you are a customer looking for your next favorite outfit or an admin managing a growing inventory, StyleCrate ensures a smooth, reliable, and visually pleasing experience for everyone involved.
 
------------------------------------------------------------------------------------------------------------------------------
+=============================================================================================================================
 
 🔥 Key Features
 
-👤 For Customers
+For Shoppers
+🛍️ Browse Products – Explore items by category, price range, or popularity with visually appealing product cards.
+🔍 Search & Filter – Quickly find the exact item you want with multiple filtering options.
+🧺 Shopping Cart – Add, remove, and adjust quantities with instant updates.
+📱 Mobile-Friendly – Optimized layouts for flawless browsing and shopping on phones and tablets.
+💬 Product Details Page – See detailed descriptions, pricing, and product images.
 
-🛕️ Easy Product Browsing – Clean UI to explore all categories
-🛒 Smart Cart System – Real-time updates and item tracking
-💳 Secure Payments – Stripe integration for a safe checkout
-📦 Order Tracking – View and track placed orders
-🔍 Search Functionality – Quickly find products by name
+For Store Managers
+📦 Product Management – Add, edit, or remove products with full control over details and images.
+📊 Dashboard Overview – See store performance, track orders, and view sales statistics at a glance.
+✅ Order Management – Manage customer orders, change statuses, and view history.
+📤 Image Uploads – Upload and manage high-quality product images using an integrated file upload system.
+📑 Category Organization – Group products by style, type, or collection for easy navigation.
 
-🛒 For Sellers
-
-📦 Product Management – Add, edit, and delete listings
-📊 Order Dashboard – See pending, shipped, and delivered orders
-📸 Image Upload – Upload item images using **Cloudinary**
-⚙️ Seller Login – Secure authentication and access control
-
------------------------------------------------------------------------------------------------------------------------------
-
+For Admins
+🔐 Role-Based Access – Secure login system with different permissions for admins, managers, and staff.
+🚀 Publish Control – Instantly publish or unpublish products with a single click.
+📈 Reports & Analytics – Review performance trends, popular items, and customer engagement.
+🛡️ Content Moderation – Approve product listings, descriptions, and images to maintain brand quality.
 
 🛠️ Tech Stack
+⚛️ Frontend : React.js + Vite
+🎨 Styling : Tailwind CSS
+🟢 Backend : Node.js + Express.js
+🍃 Database : MongoDB (Mongoose)
 
-⚛️ Frontend
-
-React.js (with Context API for global state)
-Tailwind CSS (responsive and modern UI design)
-
-🖙 Backend
-
-Node.js & Express.js (RESTful APIs)
-MongoDB with Mongoose (NoSQL database)
-Stripe API (secure checkout experience)
-Cloudinary API (media storage and CDN)
-
------------------------------------------------------------------------------------------------------------------------------
-
+=============================================================================================================================
 
 🔧 Installed Dependencies
 
 Frontend Essentials
-
-* axios – For API requests
-* react-router-dom – Routing across pages
-* react-icons – Icon support
-* framer-motion – Animations
-* tailwindcss – Styling framework
+• Tailwind CSS → npm install tailwindcss @tailwindcss/vite
+• React Router → npm install react-router-dom
+• Axios → npm install axios
+• React Icons → npm install react-icons
+• Framer Motion → npm install framer-motion
 
 Backend Core
-
-* express – Server framework
-* mongoose – MongoDB ODM
-* cors – Cross-Origin requests
-* stripe – Payment processing
-* dotenv – Environment variables
-* multer + cloudinary – File uploads & media storage
+• Express → npm install express
+• Mongoose → npm install mongoose
+• JSON Web Tokens → npm install jsonwebtoken
+• Bcrypt → npm install bcrypt
+• Multer → npm install multer
 
 Dev Tools
+• Nodemon → npm install -D nodemon
+• ESLint → npm install -D eslint
 
-* nodemon – Development watcher
-* eslint – Code quality
+=============================================================================================================================
 
------------------------------------------------------------------------------------------------------------------------------
+▶️ How to Run the StyleCrate Project
 
+📥 Clone the Repository
+git clone https://github.com/<your-username>/StyleCrate.git
+cd StyleCrate
 
- ▶️ How to Run the Groceasy Project
-
-📅 Clone the Repository
-
-git clone https://github.com/kithvin/Groceasy.git
-cd Groceasy
-
- ⚙️ Backend Setup
-
-cd backend
-npm install
-# Create a .env file with:
-# MONGODB_URI=""
-# CLOUDINARY_API_KEY=""
-# STRIPE_SECRET_KEY=""
-# JWT_SECRET=""
-npm run dev
-
-
-⚙️ Frontend Setup
-
+⚙️ Install Backend Dependencies
 cd ../frontend
 npm install
-# Create a .env file with:
-# VITE_API_BASE_URL="http://localhost:5000"
-npm run dev
 
+🔐 Environment Configuration
+backend/.env
+# JWT Secret for signing tokens
+JWT_SECRET=" your_jwt_secret "
 
------------------------------------------------------------------------------------------------------------------------------
+# Application running mode
+NODE_ENV = " your_node_env”
 
+# Admin Credentials
+SELLER_EMAIL="admin@example.com"
+SELLER_PASSWORD="admin1234"
 
-🌐 Deployment
+# MongoDB connection string
+MONGODB_URI="your_mongodb_connection_string "
 
-The project is live at: [https://groceezy-kithvins-projects.vercel.app/) 
+# Cloudinary
+CLOUDINARY_CLOUD_NAME = '"your_cloudanary_cloud_name"
+CLOUDINARY_API_KEY = ''your_cloudanary_api_key''
+CLOUDINARY_API_SECRET = ''your_cloudanary_API_secret''
 
+# Stripe Setup
+STRIPE_PUBLISHABLE_KEY = ''your_stripe _publishable_key''
+STRIPE_SECRET_KEY = ''your_stripe _secret_key''
 
------------------------------------------------------------------------------------------------------------------------------
+# Stripe Setup
+STRIPE_WEBHOOK_SECRET = ''your_stripe _webhook_secret_key''
 
-⚙️ Env File
+# Subcribe Email Setup
+ADMIN_EMAIL= ''system _admin_email''
+ADMIN_PASS= ''system _admin_password''
 
-* Frontend 
+frontend/.env
 
 # Currency
 VITE_CURRENCY = '$'
 
-# Backend URL
-VITE_BACKEND_URL =  "http://localhost:5000"
+# Your Bakcend URL
+VITE_BACKEND_URL =  "your_backedn_url"
 
-* Backend
+=============================================================================================================================
 
-# Secret key used for signing and verifying JWT tokens
-JWT_SECRET="secret#text"
+🌐 Deployment
 
-# Application running mode
-NODE_ENV = "development"
-
-# Admin Credentials
-SELLER_EMAIL = "admin@example.com"
-SELLER_PASSWORD = "admin1234"
-
-# MongoDB connection string
-MONGODB_URI = "mongodb+srv://Admin:1234@groceezy-cluster.6ibl4pn.mongodb.net/?retryWrites=true&w=majority&appName=Groceezy-Cluster"
-
-# Cloudinary
-CLOUDINARY_CLOUD_NAME = 'dc3ysm7sq'
-CLOUDINARY_API_KEY = '226853749731742'
-CLOUDINARY_API_SECRET = 'qLdBTTMPwZQC2gxluJcU-zh5A64'
-
+ The project is live and accessible at (Frontend): ()
 
