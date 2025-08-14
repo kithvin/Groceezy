@@ -120,7 +120,7 @@ VITE_BACKEND_URL =  "your_backedn_url"
 
 🌐 Deployment
 
- The project is live and accessible at (Frontend view): (https:/groceezy-new.vercel.app)
+ The project is live and accessible at (Frontend view): (https://groceezy-new.vercel.app/)
 
 
 =============================================================================================================================
