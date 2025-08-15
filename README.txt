@@ -18,6 +18,7 @@ For Shoppers
 💬 Product Details Page – See detailed descriptions, pricing, and product images.
 
 For Store Managers
+
 📦 Product Management – Add, edit, or remove products with full control over details and images.
 📊 Dashboard Overview – See store performance, track orders, and view sales statistics at a glance.
 ✅ Order Management – Manage customer orders, change statuses, and view history.
@@ -25,12 +26,14 @@ For Store Managers
 📑 Category Organization – Group products by style, type, or collection for easy navigation.
 
 For Admins
+
 🔐 Role-Based Access – Secure login system with different permissions for admins, managers, and staff.
 🚀 Publish Control – Instantly publish or unpublish products with a single click.
 📈 Reports & Analytics – Review performance trends, popular items, and customer engagement.
 🛡️ Content Moderation – Approve product listings, descriptions, and images to maintain brand quality.
 
 🛠️ Tech Stack
+
 ⚛️ Frontend : React.js + Vite
 🎨 Styling : Tailwind CSS
 🟢 Backend : Node.js + Express.js
